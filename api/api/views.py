@@ -15,9 +15,8 @@ class Missions(object):
 
     def collection_post(self):
         values = self.request.params
-        print dict(values)
         insert(dict(values))
-        return dict(values)
+        return "Mission Created"
 
     def get(self):
         return get_single(str(self.request.matchdict['id']))
