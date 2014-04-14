@@ -1,3 +1,0 @@
-cornice
-waitress
-pymongo

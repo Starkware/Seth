@@ -6,5 +6,5 @@ from pyramid.config import Configurator
 def main(global_config, **settings):
     config = Configurator(settings=settings)
     config.include("cornice")
-    config.scan("spaceappsapi.views")
+    config.scan("api.views")
     return config.make_wsgi_app()

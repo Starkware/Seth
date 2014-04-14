@@ -9,9 +9,9 @@ with open(os.path.join(here, 'README.rst')) as f:
     README = f.read()
 
 
-setup(name='spaceappsapi',
+setup(name='api',
     version=0.1,
-    description='spaceappsapi',
+    description='api',
     long_description=README,
     classifiers=[
         "Programming Language :: Python",
@@ -29,7 +29,7 @@ setup(name='spaceappsapi',
     install_requires=['cornice', 'waitress'],
     entry_points = """\
     [paste.app_factory]
-    main = spaceappsapi:main
+    main = api:main
     """,
     paster_plugins=['pyramid'],
 )
