@@ -21,11 +21,8 @@ def insert(data):
     """insert a mission to the database"""
     missions.insert({x[0]:x[1] for x in data.items() if x[1] != ""})
 
-def get_single(mission_id,delim=False,confirm=False):
-    if delim:
-        if confirm:
-            tmp = missions.find_one({'_id':objectid(mission_id)},{'_id':0})
-            return dict({x:tmp.get(x) for x in delim}.items()+{x:True for x in confirm if tmp.has_key(x)}.items())
-        return missions.find_one({'_id':objectid(mission_id)},dict({x:1 for x in delim}.items()+{'_id':0}.items()))
+def get_single(mission_id,but=False):
+    if but:
+        return missions.find_one({'_id':objectid(mission_id)},{x:0 for x in but})
     return missions.find_one({'_id':objectid(mission_id)},{'_id':0})
 
