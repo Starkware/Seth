@@ -1,6 +1,6 @@
 Seth
 =========
-**S**pace **e**vents **t**racking **h**ub
+**S** pace **e**vents **t**racking **h**ub
 
 
 An app for those space enthusiasts that want a briefing of every mission in the palm of their hand.
