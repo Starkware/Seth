@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from bson.objectid import ObjectId as objectid
 
-client = MongoClient('50.112.197.183', 27017)
+client = MongoClient('54.203.59.89', 27017)
 
 db = client.elephant_data
 

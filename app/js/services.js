@@ -7,14 +7,14 @@ factory('Events', function($http) {
 		 allEvents: function ()	{
 			return $http({
 				// url: 'http://50.112.197.183:6543/missions',
-				url: 'http://10.0.0.7:6543/missions',
+				url: 'http://54.203.59.89:6543/missions',
 				method: 'GET'
 			});
 		},
 		 detailEvent: function (eventId) {
 			return $http({
 				// url: 'http://50.112.197.183:6543/missions/'+eventId,
-				url: 'http://10.0.0.7:6543/missions/'+eventId,
+				url: 'http://54.203.59.89:6543/missions/'+eventId,
 				method: 'GET'
 			});
 		}
