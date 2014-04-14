@@ -11,7 +11,7 @@ class Missions(object):
         self.request = request
 
     def collection_get(self):
-        return get_all(delim=['name','image','agency','short_description','date'])
+        return get_all(delim=['name','image','agency','description','date'])
 
     def collection_post(self):
         values = self.request.params
@@ -20,5 +20,5 @@ class Missions(object):
         return dict(values)
 
     def get(self):
-        return get_single(str(self.request.matchdict['id']),but=['short_description','_id'])
+        return get_single(str(self.request.matchdict['id']),but=['_id'])
 
