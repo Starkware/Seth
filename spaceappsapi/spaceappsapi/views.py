@@ -20,5 +20,5 @@ class Missions(object):
         return dict(values)
 
     def get(self):
-        return get_single(str(self.request.matchdict['id']),but=['_id'])
+        return get_single(str(self.request.matchdict['id']))
 
