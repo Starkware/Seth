@@ -1,12 +1,24 @@
 """ Cornice services.
 """
-from cornice import Service
+from cornice.resource import resource, view
+from db import get_all, get_single, insert
+from json import loads
 
+@resource(collection_path='/missions', path='/missions/{id}', cors_origins=('*',))
+class Missions(object):
 
-hello = Service(name='hello', path='/', description="Simplest app")
+    def __init__(self, request):
+        self.request = request
 
+    def collection_get(self):
+        return get_all(delim=['name','image','agency','description','date'])
 
-@hello.get()
-def get_info(request):
-    """Returns Hello in JSON."""
-    return {'Hello': 'World'}
+    def collection_post(self):
+        values = self.request.params
+        print dict(values)
+        insert(dict(values))
+        return dict(values)
+
+    def get(self):
+        return get_single(str(self.request.matchdict['id']))
+
